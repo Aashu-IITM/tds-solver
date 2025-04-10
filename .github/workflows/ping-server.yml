@@ -11,4 +11,6 @@ jobs:
     steps:
       - name: Curl Ping to Render Server
         run: |
-         curl -sSf -X POST https://tds-solver-rcfv.onrender.com/api -F "ping=true" 
+          curl -X POST https://tds-solver-rcfv.onrender.com/api \
+            -F "question=dummy" \
+            -F "ping=true"
