@@ -294,7 +294,9 @@ def extract_parameters(matched_ques_id, question):
     return arguments
 
 
-
+@app.get("/")
+def read_root():
+    return {"status": "Server is up and running"}
     
 
 
