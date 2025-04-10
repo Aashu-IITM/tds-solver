@@ -1,0 +1,16 @@
+name: Keep Render Server Alive
+
+on:
+  schedule:
+    - cron: '0 */3 * * *'  # Every 3 hours
+  workflow_dispatch:       # Allow manual trigger if needed
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Curl Ping to Render Server
+        run: |
+          curl -X POST "https://tds-solver-rcfv.onrender.com/api" \
+            -H "Content-Type: multipart/form-data" \
+            -F "question=How many Wednesdays are there in the date range 1987-01-24 to 2017-10-28?"
