@@ -11,6 +11,4 @@ jobs:
     steps:
       - name: Curl Ping to Render Server
         run: |
-          curl -X POST "https://tds-solver-rcfv.onrender.com/api" \
-            -H "Content-Type: multipart/form-data" \
-            -F "question=How many Wednesdays are there in the date range 1987-01-24 to 2017-10-28?"
+         curl -sSf -X POST https://tds-solver-rcfv.onrender.com/api -F "ping=true" 
