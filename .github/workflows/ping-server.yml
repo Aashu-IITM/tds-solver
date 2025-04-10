@@ -2,7 +2,7 @@ name: Keep Render Server Alive
 
 on:
   schedule:
-    - cron: '0 */3 * * *'  # Every 3 hours
+    - cron: "*/15 * * * *"  # Every 15 minutes
   workflow_dispatch:       # Allow manual trigger if needed
 
 jobs:
