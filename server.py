@@ -303,7 +303,10 @@ def read_root():
 
 
 @app.post("/api")
-async def api(question: Annotated[str, Form()], file: List[UploadFile] | None = None):
+async def api(question: Annotated[str, Form()], file: List[UploadFile] | None = None, ping: bool = Form(default=False)):
+    if ping:
+        return {"status": "ping acknowledged"}
+        
     if file:
         temp_dir = tempfile.mkdtemp()
         file_path = os.path.join(temp_dir, file[0].filename)
